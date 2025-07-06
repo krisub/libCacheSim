@@ -2,27 +2,24 @@
 #include <list>
 
 #include "PQEvolve.h"
-
-
 template <typename T> using CountsInfo = OrderedMultiset<T>;
 template <typename T> using AgeInfo = AgePercentileView<T>;
 template <typename T> using SizeInfo = OrderedMultiset<T>;
 
-#ifdef LLM_GENERATED_CODE
-  #include "LLMCode.h"
-#else
-  int priority(
-    uint64_t current_time, obj_id_t obj_id, pq_cache_obj_info& obj_info, 
-    CountsInfo<int32_t>& counts, AgeInfo<int64_t> ages, SizeInfo<int64_t>& sizes,
-    History& history
-  ){
-    return obj_info.last_access_vtime; // LRU
-    // return current_time; // another way to implement LRU
-    // return -1 * obj_info.last_access_vtime; // MRU
-    // return obj_info.addition_to_cache_vtime; // FIFO
-    // return obj_info.count; // approximately LFU (not sure what baseline LFU does if there are multiple objects of same size)
-  }
-#endif
+#include "LLMCode.h" 
+
+// int priority(
+//   uint64_t current_time, obj_id_t obj_id, pq_cache_obj_info& obj_info, 
+//   CountsInfo<int32_t>& counts, AgeInfo<int64_t> ages, SizeInfo<int64_t>& sizes,
+//   History& history
+// ){
+//   return obj_info.last_access_vtime; // LRU
+//   // return current_time; // another way to implement LRU
+//   // return -1 * obj_info.last_access_vtime; // MRU
+//   // return obj_info.addition_to_cache_vtime; // FIFO
+//   // return obj_info.count; // approximately LFU (not sure what baseline LFU does if there are multiple objects of same size)
+// }
+// #endif
 
 int PQEvolveData::priority_wrapper(const cache_t *cache, obj_id_t obj_id, pq_cache_obj_info& obj_info){
   return priority(

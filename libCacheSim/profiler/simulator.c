@@ -90,20 +90,20 @@ static void _simulate(gpointer data, gpointer user_data) {
   }
 
 
-  #ifdef SIMULATE_MAX_REQUESTS
-    long long int total_requests_simulated = 0;
-  #endif
+  // #ifdef SIMULATE_MAX_REQUESTS
+  //   long long int total_requests_simulated = 0;
+  // #endif
   while (req->valid) {
     result[idx].n_req++;
     result[idx].n_req_byte += req->obj_size;
 
-    #ifdef SIMULATE_MAX_REQUESTS
-      total_requests_simulated++;
-      if(total_requests_simulated >= SIMULATE_MAX_REQUESTS) {
-        INFO("Early exit after %d\n", SIMULATE_MAX_REQUESTS);
-        break;
-      }
-    #endif
+    // #ifdef SIMULATE_MAX_REQUESTS
+    //   total_requests_simulated++;
+    //   if(total_requests_simulated >= SIMULATE_MAX_REQUESTS) {
+    //     INFO("Early exit after %d\n", SIMULATE_MAX_REQUESTS);
+    //     break;
+    //   }
+    // #endif
 
     req->clock_time -= start_ts;
     if (local_cache->get(local_cache, req) == false) {
