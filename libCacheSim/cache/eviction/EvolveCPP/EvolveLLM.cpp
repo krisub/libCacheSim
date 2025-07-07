@@ -70,6 +70,7 @@ cache_ptr head, cache_ptr tail, uint64_t current_time,
 CountsInfo<int32_t>& counts, AgeInfo<int64_t> ages, SizeInfo<int64_t>& sizes,
 History& history
 ) {    
+    assert(false); // this should not be used - use PQ impl instead.
     cache_ptr eviction_candidate = head;
 
     for (cache_ptr curr = head; curr != nullptr; curr = curr.next()) {
