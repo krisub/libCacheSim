@@ -281,6 +281,7 @@ file(GLOB cache_source
     ${PROJECT_SOURCE_DIR}/libCacheSim/cache/eviction/LHD/*
     ${PROJECT_SOURCE_DIR}/libCacheSim/cache/eviction/EvolveCPP/*
     ${PROJECT_SOURCE_DIR}/libCacheSim/cache/eviction/PQEvolve/*
+    ${PROJECT_SOURCE_DIR}/libCacheSim/cache/eviction/FullCodeEvolve/*
     ${PROJECT_SOURCE_DIR}/libCacheSim/cache/eviction/cpp/*
 )
 

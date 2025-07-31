@@ -72,6 +72,8 @@ static inline cache_t *create_cache(const char *trace_path, const char *eviction
     cache = EvolveComplete_init(cc_params, eviction_params);
   } else if (strcasecmp(eviction_algo, "PQEvolve") == 0) {
     cache = PQEvolve_init(cc_params, eviction_params);
+  } else if (strcasecmp(eviction_algo, "FullCodeEvolve") == 0) {
+    cache = FullCodeEvolve_init(cc_params, eviction_params);
   } else if (strcasecmp(eviction_algo, "tinyLFU") == 0) {
     if (eviction_params == NULL) {
       cache = WTinyLFU_init(cc_params, eviction_params);
