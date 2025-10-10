@@ -104,6 +104,11 @@ set(sourceCPP
         PQEvolve/PQEvolveInterface.cpp
 )
 
+set(sourceCPP
+        ${sourceCPP}
+        EvolveFULL/EvolveFULL.cpp
+)
+
 if (ENABLE_LRB)
     set (sourceCPP ${sourceCPP} 
         LRB/lrb.cpp
