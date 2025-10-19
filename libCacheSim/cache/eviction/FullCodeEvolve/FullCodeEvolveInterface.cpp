@@ -1,7 +1,8 @@
 #include "../../../dataStructure/hashtable/hashtable.h"
 #include "../../../include/libCacheSim/evictionAlgo.h"
 
-#include "LRU.cpp"
+// #include "LRU.cpp"
+#include "LLMCode.h"
 
 #ifdef __cplusplus
 extern "C" {
