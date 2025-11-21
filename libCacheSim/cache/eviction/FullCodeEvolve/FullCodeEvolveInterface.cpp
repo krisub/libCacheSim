@@ -103,7 +103,8 @@ static cache_obj_t *FullCodeEvolve_insert(cache_t *cache, const request_t *req) 
   FullCodeEvolve_params_t *params = (FullCodeEvolve_params_t *)cache->eviction_params;
 
   cache_obj_t *obj = cache_insert_base(cache, req);
-  params->manager->insert(req->obj_id);
+  // params->manager->insert(req->obj_id);
+  params->manager->insert(req->obj_id, req->obj_size);
   
   return obj;
 }
